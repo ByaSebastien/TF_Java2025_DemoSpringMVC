@@ -31,20 +31,20 @@
             <tr>
                 <th>Marque</th>
                 <th>Modèle</th>
-                <th>Puissance</th>
-                <th>Cylindrée</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <#list cars as car>
                 <tr>
-                    <td>${car.brand}</td>
-                    <td>${car.model}</td>
-                    <td>${car.horsePower}</td>
-                    <td>${car.engineCylinder}</td>
+                    <td>${car.brand()}</td>
+                    <td>${car.model()}</td>
                     <td>
-                        <button>Détails</button>
+                        <a href="/${car.id()}">Détails</a>
+                        <a href="/edit/${car.id()}">Modifier</a>
+                        <form action="/delete/${car.id()}" method="post">
+                            <button type="submit">Supprimer</button>
+                        </form>
                     </td>
                 </tr>
             </#list>
