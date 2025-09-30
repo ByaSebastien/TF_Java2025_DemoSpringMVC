@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 @Data
 public class CarForm{
 
-    @NotBlank @Size(max = 50)
+    @NotBlank(message = "Tu as oublié la marque bièsse!!!") @Size(max = 50)
     private String brand;
-    @NotBlank @Size(max = 50)
+    @NotBlank(message = "No di dju qui fesse?") @Size(max = 50)
     private String model;
-    @NotNull @Min(0)
+    @NotNull(message = "NULL_ERROR") @Min(value = 0,message = "Minimum 0")
     private Integer horsePower;
     @NotNull @Min(0)
     private Integer engineCylinder;
